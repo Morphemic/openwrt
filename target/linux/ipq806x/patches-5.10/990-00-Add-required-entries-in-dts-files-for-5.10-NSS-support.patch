@@ -393,7 +393,7 @@
  &nand_controller {
 --- b/arch/arm/boot/dts/qcom-ipq8065.dtsi
 +++ a/arch/arm/boot/dts/qcom-ipq8065.dtsi
-@@ -165,3 +165,27 @@
+@@ -165,3 +165,15 @@
 	 	opp-level = <2>;
  	};
  };
@@ -409,18 +409,50 @@
 +	qcom,mid-frequency = <800000000>;
 +	qcom,max-frequency = <800000000>;
 + };
-+
-+ &gmac1 {
+--- b/arch/arm/boot/dts/qcom-ipq8065-nighthawk.dtsi
++++ a/arch/arm/boot/dts/qcom-ipq8065-nighthawk.dtsi
+@@ -353,6 +353,9 @@
+	qcom,phy_mdio_addr = <4>;
+	qcom,poll_required = <0>;
+	qcom,rgmii_delay = <1>;
 +	qcom,phy-mdio-addr = <4>;
 +	qcom,poll-required = <0>;
 +	qcom,rgmii-delay = <1>;
-+ };
-+	
-+ &gmac2 {
+	qcom,phy_mii_type = <0>;
+	qcom,emulation = <0>;
+	qcom,irq = <255>;
+@@ -378,6 +381,9 @@
+	qcom,phy_mdio_addr = <0>;	/* none */
+	qcom,poll_required = <0>;	/* no polling */
+	qcom,rgmii_delay = <0>;
 +	qcom,phy-mdio-addr = <0>;
 +	qcom,poll-required = <0>;	
 +	qcom,rgmii-delay = <0>;
-+ };	
+	qcom,phy_mii_type = <1>;
+	qcom,emulation = <0>;
+	qcom,irq = <258>;
+--- b/arch/arm/boot/dts/qcom-ipq8065-nbg6817.dts
++++ a/arch/arm/boot/dts/qcom-ipq8065-nbg6817.dts
+@@ -273,6 +273,9 @@
+	qcom,phy_mdio_addr = <4>;
+	qcom,poll_required = <0>;
+	qcom,rgmii_delay = <1>;
++	qcom,phy-mdio-addr = <4>;
++	qcom,poll-required = <0>;
++	qcom,rgmii-delay = <1>;
+	qcom,phy_mii_type = <0>;
+	qcom,emulation = <0>;
+	qcom,irq = <255>;
+@@ -294,6 +297,9 @@
+	qcom,phy_mdio_addr = <0>;	/* none */
+	qcom,poll_required = <0>;	/* no polling */
+	qcom,rgmii_delay = <0>;
++	qcom,phy-mdio-addr = <0>;
++	qcom,poll-required = <0>;	
++	qcom,rgmii-delay = <0>;
+	qcom,phy_mii_type = <1>;
+	qcom,emulation = <0>;
+	qcom,irq = <258>;
 --- b/arch/arm/boot/dts/qcom-ipq8065-rt4230w-rev6.dts
 +++ a/arch/arm/boot/dts/qcom-ipq8065-rt4230w-rev6.dts
 @@ -312,10 +312,21 @@	
